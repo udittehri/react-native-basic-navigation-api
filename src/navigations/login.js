@@ -3,6 +3,7 @@
 import * as React from 'react';
 import LoginComponent from './../components/login'
 import DashboardComponent from '././../components/dashboard'
+import AddProductComponent from './../components/products/add'
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -27,6 +28,9 @@ function App() {
 
                 <Stack.Screen name="Home" component={LoginComponent} />
                 <Stack.Screen name="Details" component={DashboardComponent} />
+                <Stack.Screen name="addProduct" component={AddProductComponent} />
+
+                {/* < */}
             </Stack.Navigator>
         </NavigationContainer>
 

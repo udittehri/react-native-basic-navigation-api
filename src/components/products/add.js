@@ -7,13 +7,9 @@ import axios from 'axios'
 import { API } from './../connections/api-login'
 import { callGetPolice } from './../connections/backendPowerHouse'
 
-const DashboardComponent = ({ navigation }) => {
+const AddProductComponent = ({ navigation }) => {
     const [products, setProducts] = React.useState({});
 
-    useEffect(() => {
-        // Update the document title using the browser API
-        getAllProducts()
-    }), [];
     function hello() {
         // navigation.navigate('Details')
         getAllProducts();
@@ -205,4 +201,4 @@ const styles = StyleSheet.create({
 
 // });
 
-export default DashboardComponent;
+export default AddProductComponent;

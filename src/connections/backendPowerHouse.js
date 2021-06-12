@@ -1,27 +1,33 @@
-function callBackendPolice(url, type, body) {
-    let base = 'localhost'
-    let address = `${base}${url}`
+import axios from 'axios'
 
-    fetch(address, {
-        method: type,
-        headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(body)
-    })
-        .then((response) => response.json())
-        .then((json) => {
-            console.log(`Url : ${address} \n Body : ${body} \n Response : ${json} `);
-            return json;
+const baseURL = 'https://awesomemee.herokuapp.com/api'
+
+export function callGetPolice(url) {
+
+    let address = `${baseURL}${url}`
+
+    return axios.get(address)
+    // .then((response) => {
+    //     console.error(`Response  : ${response.data} `)
+    //     return response.data
+    // })
+    // .catch((error) => {
+    //     console.error(`Error : ${error} `)
+    //     return error;
+    // })
+
+}
+
+export function callPostPolice(url, body) {
+    let address = `${baseURL}${url}`
+
+    return axios.get(address, body)
+        .then((response) => {
+            console.error(`Response  : ${response.data} `)
+            return response.data
         })
         .catch((error) => {
             console.error(`Error : ${error} `)
             return error;
         })
-        .finally(() => {
-        });
-
 }
-
-exports.callBackendPolice = new callBackendPolice()
